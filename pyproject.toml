@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grok-computer-use"
+version = "0.1.0"
+description = "Verification-first Windows computer-use MCP for Grok Build"
+readme = "README.md"
+license = "MIT"
+authors = [{name = "I-Kai Huang", email = "61899328+kaihuang1425@users.noreply.github.com"}]
+keywords = ["grok", "computer-use", "mcp", "windows", "uiautomation", "agents"]
+requires-python = ">=3.11"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "pydantic>=2.7",
+  "mcp>=2,<3",
+  "psutil>=5.9",
+]
+
+[project.optional-dependencies]
+windows = [
+  "uiautomation>=2.0.20",
+  "pyautogui>=0.9.54",
+  "mss>=9.0",
+  "Pillow>=10.0",
+  "pywin32>=306",
+  "pyperclip>=1.9",
+]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+grok-cua = "grok_cua.server:main"
+grok-cua-eval = "grok_cua.eval_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

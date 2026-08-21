@@ -1,0 +1,5 @@
+[mcp_servers.grok-computer-use]
+command = "python"
+args = ["-m", "grok_cua.server"]
+startup_timeout_sec = 30
+tool_timeout_sec = 120

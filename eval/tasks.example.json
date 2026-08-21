@@ -1,0 +1,18 @@
+[
+  {
+    "id": "notepad-save-01",
+    "goal": "Open Notepad, type 'grok-cua verification', and save it as C:\\Temp\\grok-cua.txt",
+    "checkpoints": [
+      {"type": "window", "contains": "Notepad"},
+      {"type": "file_exists", "path": "C:\\Temp\\grok-cua.txt"},
+      {"type": "file_contains", "path": "C:\\Temp\\grok-cua.txt", "text": "grok-cua verification"}
+    ]
+  },
+  {
+    "id": "cross-app-01",
+    "goal": "Use Calculator to compute 37*19, then write the result into Notepad and save it to C:\\Temp\\calc-result.txt",
+    "checkpoints": [
+      {"type": "file_contains", "path": "C:\\Temp\\calc-result.txt", "text": "703"}
+    ]
+  }
+]
