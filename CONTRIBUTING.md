@@ -4,13 +4,11 @@ This project is verification-first. New computer-use capabilities should improve
 
 ## Development
 
-```bash
+```powershell
 python -m venv .venv
-# Windows PowerShell
-.\.venv\Scripts\Activate.ps1
-python -m pip install -e ".[windows,dev]"
-pytest -q
-python -m compileall -q src tests
+.\.venv\Scripts\python.exe -m pip install -e ".[windows,dev]"
+.\.venv\Scripts\python.exe -m pytest -q
+.\.venv\Scripts\python.exe -m compileall -q src tests
 ```
 
 ## Change requirements
@@ -20,5 +18,6 @@ python -m compileall -q src tests
 - Define observable postconditions for new state-changing actions.
 - Do not weaken permission or authentication boundaries for convenience.
 - Keep benchmark claims reproducible and distinguish measured results from hypotheses.
+- Keep public-facing project naming consistent as **Grok Computer Use**.
 
 See `docs/VERIFICATION.md` before adding benchmark claims.

@@ -1,6 +1,6 @@
 # Security
 
-Grok CUA Lab can control a Windows desktop. Treat it as privileged local automation software.
+Grok Computer Use can control a Windows desktop. Treat it as privileged local automation software.
 
 ## Trust boundary
 
@@ -15,6 +15,8 @@ Grok CUA Lab can control a Windows desktop. Treat it as privileged local automat
 `open_app` launches an executable directly with `shell=False`; it does not accept a shell command string. This reduces accidental command-shell injection, but any executable granted to an agent can still have powerful effects.
 
 Coordinate input and clipboard-based typing are fallbacks. Semantic UI Automation and deterministic APIs should be preferred because they are easier to constrain and verify.
+
+The repo-scoped MCP configuration points to `.venv/Scripts/python.exe`, keeping runtime dependencies tied to the project environment rather than whichever global `python` happens to be on `PATH`.
 
 ## Reporting
 
