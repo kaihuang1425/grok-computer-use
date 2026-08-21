@@ -17,8 +17,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
       - name: Install core development dependencies
-        run: python -m pip install --upgrade pip && python -m pip install -e ".[dev]"
+        run: python -m pip install -e ".[dev]"
+      - name: Validate dependencies
+        run: python -m pip check
       - name: Test
         run: python -m pytest -q
       - name: Compile
@@ -31,7 +35,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
       - name: Install Windows extras
-        run: python -m pip install --upgrade pip && python -m pip install -e ".[windows,dev]"
+        run: python -m pip install -e ".[windows,dev]"
+      - name: Validate dependencies
+        run: python -m pip check
       - name: Import Windows adapter
         run: python -c "from grok_cua.adapters.windows import WindowsAdapter; print('windows adapter import ok')"
