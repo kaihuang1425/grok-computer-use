@@ -4,7 +4,7 @@ description: Verification-first Windows desktop control through the grok-compute
 when-to-use: computer use, desktop automation, Windows app interaction, click/type in an application, cross-app workflow
 user-invocable: true
 metadata:
-  author: grok-cua-lab
+  author: I-Kai Huang
   short-description: Verified hybrid Windows computer use
 ---
 
